@@ -1,11 +1,11 @@
 pipeline {
   agent {
-    docker { image 'liquibase/liquibase:4.4.2' } 
+    docker { image 'liquibase/liquibase:latest' } 
   }
   stages {
     stage('Test') {
       steps {
-        sh 'java --version'
+        sh 'liquibase --version'
       }
     } 
   }
