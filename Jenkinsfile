@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        echo $JAVA_HOME
+        sh 'java --version'
       }
     } 
   }
