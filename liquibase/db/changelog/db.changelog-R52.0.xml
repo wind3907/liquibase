@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+  http://www.liquibase.org/xml/ns/pro
+  http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+    <!-- DDL Scripts - START -->
+    <changeSet author="initial" id="233">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_alter_tables_omni_1.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="234">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_Create_Table_ssl_mobile_rack.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="235">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_float_detail_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="236">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_float_detail_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="237">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_floats_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="238">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_floats_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="239">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_manifests_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="240">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_manifests_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="241">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_ordcw_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="242">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_ordcw_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="243">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_ordd_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="244">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_ordd_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="245">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_ordm_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="246">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R52_DDL_ixdock_ordm_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <!-- DDL Scripts - END -->
+    <!-- DML Scripts - START -->
+    <changeSet author="initial" id="247">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/OPCOF4016_DML_omni_syspar.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="248">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/OPCOF4033_DML_insert_ermtype.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="249">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R52_OPCOF_4050_dml_insert_DISABLE_IXDOCK_SOS_BARCODE.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="250">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R52_0_DML_OPCO4062_add_loc_message.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="251" version="R52.1-">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R52_0_DML_OPCO4062_add_loc_stat.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="wimukthi" id="252">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/test_ddl.sql"
+            relativeToChangelogFile="true"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                encoding="UTF-8"
+                path="../DDLScripts/test_ddl.sql"
+                relativeToChangelogFile="true"/>
+        </rollback>
+    </changeSet>
+    <!-- DML Scripts - END -->
+</databaseChangeLog>

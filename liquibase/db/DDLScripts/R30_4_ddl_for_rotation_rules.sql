@@ -1,0 +1,1 @@
+ALTER TABLE PM ADD(mx_rotation_rules VARCHAR2(4));

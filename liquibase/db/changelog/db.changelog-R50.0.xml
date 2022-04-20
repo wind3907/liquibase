@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+  http://www.liquibase.org/xml/ns/pro
+  http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+        
+    <!-- DDL Scripts - START -->
+    <changeSet author="initial" id="51">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/Jira3523_DDL_alter_table_putawaylst.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="52">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R46_0_OPCOF-3530_DDL_alter_float_detail_table_for_CFA.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="53">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R46_0_OPCOF3530_DDL_Chic_Fil_A.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="54">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R46_Jira3517_DDL_alter_usr.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="55">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R_LMS_BY_DDL_Jira3496_add_scan_types_to_trans.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="56">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R46_Jira3497_DDL_alter_putawaylst.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="57">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R45.2_DDL_add_lms_sent_flag.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="58">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R46_1_DDL_alter_arch_batch_table.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="59">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R46_1_DDL_alter_batch_table.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="60">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R46_0_2_DDL_jira3786_putawaylst_hist.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="61">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/DDL_create_xdock_meta_header_table.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="62">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/DDL_create_xdock_tracer_table.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="63">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/OPCO_R1_story_3597_create_XDOCK_STATUS_MAINTENANCE.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="64">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47-R1_cross_dock.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="65">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_Jira3420_R1_cross_dock.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="66">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_system_xdock_config.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="67">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_Jira3380_OP_site_1_build_pallets.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="68">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_alter_putawaylst.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="69">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_float_detail_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="70">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_float_detail_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="71">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_floats_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="72">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_floats_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="73">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_manifest_dtls_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="74">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_manifest_dtls_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="75">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_ordcw_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="76">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_ordcw_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="77">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_ordd_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="78">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_ordd_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="79">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_ordm_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="80">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_ordm_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="81">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_ordm_routing_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="82">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_ordm_routing_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="83">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_pm_in.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="84">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_pm_out.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="85">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/r47_jira3394_alter_rtn_ddl.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="86">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/r47_jira3394_xdock_order_xref_ddl.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="87">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/r47_jira3394_xdock_returns_in_ddl.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="88">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/r47_jira3394_xdock_returns_out_ddl.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="89">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/r47_jira3394_xdock_seq_ddl.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="90">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/r47_jira3506_alter_zone_ddl.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="91">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R45.2_DDL_add_lms_sent_flag.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="92">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_DDL_xdock_grants_msghb_usr.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="93">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_grants.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="94">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R46_1_OPCOF-3541_DDL_Alter_Putawaylst.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="95">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R47_0_DDL_OPCOF-3878_R1_cross_dock_add_columns_bckup.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="96">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/OPCOF3867_DDL_add_add_date_to_put_hist.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="97">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R_50_DDL_Jira3943_add_osd_to_put_hist.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="98">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R50_1_DDL_alter_usr_table.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="99">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DDLScripts/R50_grants.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <!-- DDL Scripts - END -->
+    <!-- DML Scripts - START -->
+    <changeSet author="initial" id="100">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/Jira3523_DML_Insert_LV_LBR_FUNC.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="101">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/Jira3523_DML_Insert_LV_job_class.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="102">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/Jira3523_DML_Insert_LV_job_code.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="103">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R46_0_OPCOF-3530-DML_For_SAP_INTERFACE_PURGE.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="104">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/Jira3523_DML_insert_lr_sched_job_class.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="105">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R46_0_OPCOF-3533-DML_for_CFA_Data_Collection.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="106">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R46_1_OPCOF-3712_Populate_BY_GOALTIME_ENABLED_SYS_CONFIG.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="107">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R46_0_2_Jira3828_DML_new_trans_types.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="108">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R46_1_OPCOF-3541_DML_Add_SysPar.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="109">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R46_1_OPCOF-3541_DML_Add_Trans_Type.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="110">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R45_1_SMOD6966_DML_for_PROC_MODULE_CONFIG.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="111">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_DML_OPCOF3597_xdock_status_maintenance.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="112">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R1_DML_3577_add_new_trans_type.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="113">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_DML_Jira3376_Xdock_Syspar.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="114">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_DML_OPCO3376_msg_table.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="115">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_DML_OPCO3376_xdock_type.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="116">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_DML_OPCO3385_ins_purge.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="117">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_DML_OPCOF3575_xn_erm_type.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="118">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_DML_OPCOF3576_clx_trans_type.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="119">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_DML_xdock_Jira3380_OP_site_1_build_pallets.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="120">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_OPCOF3393_DML_XDOCK_RETURN_LABEL.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="121">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/r47_jira3506_xdoc_rec_rule_dml.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="122">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/r47_jira3506_xdoc_rtn_rule_dml.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="123">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/r47_xdock_newtrans_type_dml.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="124">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_R1_DML_3720_add_purge_tabs.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="125">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R47_0-xdock-OPCOF-3567_XDK_Add_forklift_task_priorities.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="126">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/OPCOF3867_DML_insert_update.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="127">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R50_0_DML_OPCOF-3872_BUG_Miniload_items_asterisk_when_directed_to_main_whse_reserve.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="initial" id="128">
+        <sqlFile dbms="postgresql"
+            encoding="UTF-8"
+            path="../DMLScripts/R50_OPCOF-3939_Populate-SDV-PALLET-ZONE-sysconfig.sql"
+            relativeToChangelogFile="true"/>
+    </changeSet>
+    <!-- DML Scripts - END -->
+</databaseChangeLog>

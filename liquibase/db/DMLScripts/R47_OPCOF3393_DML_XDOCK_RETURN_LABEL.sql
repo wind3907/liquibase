@@ -1,0 +1,106 @@
+/****************************************************************************
+** Date:       27-AUG-2021
+** File:       R47_OPCOF3393_DML_XDOCK_RETURN_LABEL.sql
+**
+**             Script to insert column values for XDOCK return label
+**
+**    Modification History:
+**    Date      Designer Comments
+**    --------  -------- --------------------------------------------------- **    
+**    27-AUG-2021 LWEE1503 Init
+**
+****************************************************************************/
+DECLARE
+  v_exists NUMBER := 0;
+BEGIN
+  SELECT COUNT(*)
+  INTO v_exists
+  FROM GLOBAL_REPORT_DICT
+  WHERE LANG_ID = 3 AND REPORT_NAME ='rp1rh' AND FLD_LBL_NAME = 'FULFILLMENT';
+
+ IF (v_exists = 0)  THEN
+  INSERT INTO GLOBAL_REPORT_DICT(LANG_ID, REPORT_NAME, FLD_LBL_NAME,FLD_LBL_DESC,MAX_LEN)
+  VALUES (3,'rp1rh','FULFILLMENT', 'FULFILLMENT', 5);
+  COMMIT;
+ End If;
+
+ SELECT COUNT(*)
+   INTO v_exists
+   FROM GLOBAL_REPORT_DICT
+   WHERE LANG_ID = 3 AND REPORT_NAME ='rp1rh' AND FLD_LBL_NAME = 'LASTMILE';
+
+ IF (v_exists = 0)  THEN
+   INSERT INTO GLOBAL_REPORT_DICT(LANG_ID, REPORT_NAME, FLD_LBL_NAME,FLD_LBL_DESC,MAX_LEN)
+   VALUES (3,'rp1rh','LASTMILE', 'LASTMILE', 5);
+   COMMIT;
+ End If;
+
+ SELECT COUNT(*)
+   INTO v_exists
+   FROM GLOBAL_REPORT_DICT
+   WHERE LANG_ID = 3 AND REPORT_NAME ='rp1rh' AND FLD_LBL_NAME = 'SITE';
+
+ IF (v_exists = 0)  THEN
+   INSERT INTO GLOBAL_REPORT_DICT(LANG_ID, REPORT_NAME, FLD_LBL_NAME,FLD_LBL_DESC,MAX_LEN)
+   VALUES (3,'rp1rh','SITE', 'SITE', 5);
+   COMMIT;
+ End If;
+
+ SELECT COUNT(*)
+   INTO v_exists
+   FROM GLOBAL_REPORT_DICT
+   WHERE LANG_ID = 3 AND REPORT_NAME ='rp1rh' AND FLD_LBL_NAME = 'MF';
+
+ IF (v_exists = 0)  THEN
+   INSERT INTO GLOBAL_REPORT_DICT(LANG_ID, REPORT_NAME, FLD_LBL_NAME,FLD_LBL_DESC,MAX_LEN)
+   VALUES (3,'rp1rh','MF', 'MF #', 7);
+   COMMIT;
+ End If;
+
+ SELECT COUNT(*)
+   INTO v_exists
+   FROM GLOBAL_REPORT_DICT
+   WHERE LANG_ID = 12 AND REPORT_NAME ='rp1rh' AND FLD_LBL_NAME = 'FULFILLMENT';
+
+ IF (v_exists = 0)  THEN
+   INSERT INTO GLOBAL_REPORT_DICT(LANG_ID, REPORT_NAME, FLD_LBL_NAME,FLD_LBL_DESC,MAX_LEN)
+   VALUES (12,'rp1rh','FULFILLMENT', 'ACCOMPLISSEMENT', 5);
+   COMMIT;
+ End If;
+
+ SELECT COUNT(*)
+   INTO v_exists
+   FROM GLOBAL_REPORT_DICT
+   WHERE LANG_ID = 12 AND REPORT_NAME ='rp1rh' AND FLD_LBL_NAME = 'LASTMILE';
+
+ IF (v_exists = 0)  THEN
+   INSERT INTO GLOBAL_REPORT_DICT(LANG_ID, REPORT_NAME, FLD_LBL_NAME,FLD_LBL_DESC,MAX_LEN)
+   VALUES (12,'rp1rh','LASTMILE', 'DERNIERE', 5);
+   COMMIT;
+ End If;
+
+ SELECT COUNT(*)
+   INTO v_exists
+   FROM GLOBAL_REPORT_DICT
+   WHERE LANG_ID = 12 AND REPORT_NAME ='rp1rh' AND FLD_LBL_NAME = 'SITE';
+
+ IF (v_exists = 0)  THEN
+   INSERT INTO GLOBAL_REPORT_DICT(LANG_ID, REPORT_NAME, FLD_LBL_NAME,FLD_LBL_DESC,MAX_LEN)
+   VALUES (12,'rp1rh','SITE', 'PLACER', 5);
+   COMMIT;
+ End If;
+
+ SELECT COUNT(*)
+   INTO v_exists
+   FROM GLOBAL_REPORT_DICT
+   WHERE LANG_ID = 12 AND REPORT_NAME ='rp1rh' AND FLD_LBL_NAME = 'MF';
+
+ IF (v_exists = 0)  THEN
+   INSERT INTO GLOBAL_REPORT_DICT(LANG_ID, REPORT_NAME, FLD_LBL_NAME,FLD_LBL_DESC,MAX_LEN)
+   VALUES (12,'rp1rh','MF', 'MF #', 7);
+   COMMIT;
+ End If;
+
+End;
+/
+

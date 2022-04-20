@@ -1,0 +1,2 @@
+--CHARM#6000002469-Sequencing catch weight collection while closing a PO
+ALTER TABLE SWMS.TMP_WEIGHT ADD CONSTRAINT PK_PRODID PRIMARY KEY (ERM_ID, PROD_ID);

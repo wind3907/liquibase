@@ -1,0 +1,21 @@
+CREATE TABLE "SWMS"."KILL_SESSION_AUDIT" ("TIMESTAMP" DATE DEFAULT 
+    SYSDATE NOT NULL, "KILLER" VARCHAR2(15 byte) DEFAULT USER NOT
+    NULL, "SID" NUMBER(10) NOT NULL, "SERIAL#" NUMBER(10) NOT 
+    NULL, "SESSION_USER" VARCHAR2(15 byte) NOT NULL, "MODULE" 
+    VARCHAR2(25 byte) NOT NULL, "MACHINE" VARCHAR2(25 byte), 
+    "LOGON_TIME" DATE NOT NULL, "TROUBLE" VARCHAR2(20 byte), 
+    "BLOCKER_SID" NCHAR(10), "LOCKED_TABLES" VARCHAR2(80 byte))  
+    TABLESPACE "SWMS_DTS2" PCTFREE 10 PCTUSED 0 INITRANS 1 
+    MAXTRANS 255 
+    STORAGE ( INITIAL 256K NEXT 256K MINEXTENTS 1 MAXEXTENTS 240 
+    PCTINCREASE 0) 
+    LOGGING 
+    MONITORING;
+
+create public synonym kill_session_audit for swms.kill_session_audit;
+
+grant all on swms.kill_session_audit to swms_user;
+
+grant all on swms.kill_session_audit to swms_viewer;
+
+

@@ -1,0 +1,64 @@
+CREATE OR REPLACE TRIGGER "SWMS"."TRG_INS_UPC_INFO_AROW" AFTER
+INSERT ON "UPC_INFO" FOR EACH ROW WHEN (NEW.SCAN_FUNCTION = 'W') BEGIN
+  UPDATE PM_UPC
+     SET INTERNAL_UPC = DECODE(:NEW.INTERNAL_UPC,'00000000000000',INTERNAL_UPC,:NEW.INTERNAL_UPC),
+         EXTERNAL_UPC = DECODE(:NEW.EXTERNAL_UPC,'00000000000000',EXTERNAL_UPC,:NEW.EXTERNAL_UPC),
+         UPD_DATE = :NEW.SCAN_DATE,
+         UPD_USER = :NEW.USER_ID
+   WHERE PROD_ID = :NEW.PROD_ID
+     AND CUST_PREF_VENDOR = :NEW.CUST_PREF_VENDOR
+     AND VENDOR_ID = :NEW.VENDOR_ID;
+  IF SQL%ROWCOUNT = 0 THEN
+    INSERT INTO PM_UPC (PROD_ID, CUST_PREF_VENDOR,
+      VENDOR_ID, LAST_REC_DATE, INTERNAL_UPC,
+      EXTERNAL_UPC, ADD_DATE, ADD_USER)
+    VALUES (:NEW.PROD_ID, :NEW.CUST_PREF_VENDOR,
+      :NEW.VENDOR_ID, :NEW.SCAN_DATE, :NEW.INTERNAL_UPC,
+      :NEW.EXTERNAL_UPC, SYSDATE, USER);
+  END IF;
+
+  DECLARE
+    l_value VARCHAR2(20);
+  BEGIN
+/*
+   Check system parameter that determines whether or not either the internal or external UPC can be
+   scanned to verify a selection.  If the syspar is 'Y 'or does not exist, allow either UPC to be
+   scanned.  We do that by adding an additional record to the PM_UPC table where the internal and
+   external UPCs are swapped.  If the syspar is 'N', the selector must scan the internal UPC to
+   verify split selection and the external UPC to verify case selection.
+*/
+    SELECT CONFIG_FLAG_VAL
+      INTO l_value
+      FROM SYS_CONFIG
+     WHERE CONFIG_FLAG_NAME = 'ACCEPT_EITHER_UPC'
+       AND CONFIG_FLAG_VAL = 'N';
+  EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      UPDATE PM_UPC
+         SET INTERNAL_UPC = DECODE(:NEW.EXTERNAL_UPC,'00000000000000',INTERNAL_UPC,:NEW.EXTERNAL_UPC),
+             EXTERNAL_UPC = DECODE(:NEW.INTERNAL_UPC,'00000000000000',EXTERNAL_UPC,:NEW.INTERNAL_UPC),
+             UPD_DATE = :NEW.SCAN_DATE,
+             UPD_USER = :NEW.USER_ID
+       WHERE PROD_ID = :NEW.PROD_ID
+         AND CUST_PREF_VENDOR = :NEW.CUST_PREF_VENDOR
+         AND VENDOR_ID = '0' || SUBSTR(:NEW.VENDOR_ID,1,9);
+      IF SQL%ROWCOUNT = 0 THEN
+        INSERT INTO PM_UPC (PROD_ID, CUST_PREF_VENDOR,
+          VENDOR_ID, LAST_REC_DATE, INTERNAL_UPC,
+          EXTERNAL_UPC, ADD_DATE, ADD_USER)
+        VALUES (:NEW.PROD_ID, :NEW.CUST_PREF_VENDOR,
+          '0' || SUBSTR(:NEW.VENDOR_ID,1,9), :NEW.SCAN_DATE, :NEW.EXTERNAL_UPC,
+          :NEW.INTERNAL_UPC, SYSDATE, USER);
+      END IF;
+      UPDATE PM
+         SET INTERNAL_UPC = DECODE(:NEW.INTERNAL_UPC,'00000000000000',
+                                   INTERNAL_UPC,:NEW.INTERNAL_UPC),
+             EXTERNAL_UPC = DECODE(:NEW.EXTERNAL_UPC,'00000000000000',
+                                   EXTERNAL_UPC,:NEW.EXTERNAL_UPC),
+             UPD_DATE = :NEW.SCAN_DATE,
+             UPD_USER = :NEW.USER_ID
+       WHERE PROD_ID = :NEW.PROD_ID
+         AND CUST_PREF_VENDOR = :NEW.CUST_PREF_VENDOR;
+  END;
+END;
+/

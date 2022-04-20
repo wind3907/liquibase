@@ -1,0 +1,1 @@
+drop trigger SWMS.TRG_INS_WEEKLY_SLOT_HIST_AROW;
