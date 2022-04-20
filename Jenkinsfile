@@ -8,10 +8,6 @@ pipeline {
   stages {
     stage('test') {
       sh 'java --version'
-      echo 'java home'
-      echo $JAVA_HOME
-      echo 'path'
-      echo $PATH
     }
 //     stage('Status') {
 //       steps {
