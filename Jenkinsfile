@@ -10,6 +10,7 @@ pipeline {
       steps {
         sh 'liquibase --version'
         sh 'java --version'
+        echo $JAVA_HOME
       }
     }
 //     stage('Status') {
