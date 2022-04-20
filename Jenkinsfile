@@ -7,7 +7,10 @@ pipeline {
 //   }
   stages {
     stage('test') {
-      sh 'java --version'
+      steps {
+        sh 'liquibase --version'
+        sh 'java --version'
+      }
     }
 //     stage('Status') {
 //       steps {
