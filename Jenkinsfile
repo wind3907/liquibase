@@ -6,7 +6,7 @@ pipeline {
 //     URL='jdbc:oracle:thin:@lx739q3-db.swms-np.us-east-1.aws.sysco.net:1521:SWM1'
 //   }
   stages {
-    stage {
+    stage('test') {
       sh 'liquibase --version'
       sh 'java --version'
       echo 'java home'
