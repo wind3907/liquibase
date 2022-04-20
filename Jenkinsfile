@@ -1,32 +1,21 @@
 pipeline {
-  agent {
-    docker { image 'liquibase/liquibase:latest' }
-  }
-//   environment {
-//     URL='jdbc:oracle:thin:@lx739q3-db.swms-np.us-east-1.aws.sysco.net:1521:SWM1'
-//   }
+  agent none
   stages {
-    stage('test') {
-      steps {
-        sh 'liquibase --version'
-        sh 'java --version'
-        echo $PATH
+    stage('Run Tests') {
+      parallel {
+        stage("liquibase") {
+          agent {
+            docker { image 'liquibase/liquibase:latest' }
+          }
+          steps {
+            stage('test') {
+              steps {
+                sh 'liquibase --version'
+              }
+            }
+          }
+        }
       }
-    }
-//     stage('Status') {
-//       steps {
-//         sh 'liquibase status --log-level info --url="jdbc:oracle:thin:@lx739q3-db.swms-np.us-east-1.aws.sysco.net:1521:SWM1" --changeLogFile=./liquibase/root/db.changelog-root.xml --username="swms" --password="swms"'
-//       }
-//     }
-//     stage('Update') {
-//       steps {
-//         sh 'liquibase update --url="jdbc:oracle:thin:@lx739q3-db.swms-np.us-east-1.aws.sysco.net:1521:SWM1" --changeLogFile=./liquibase/root/db.changelog-root.xml --username="swms" --password="swms"'
-//       }
-//     }
-  }
-  post {
-    always {
-      cleanWs()
     }
   }
 }
