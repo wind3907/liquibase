@@ -7,13 +7,11 @@ pipeline {
 //   }
   stages {
     stage('test') {
-      sh 'liquibase --version'
       sh 'java --version'
       echo 'java home'
       echo $JAVA_HOME
       echo 'path'
       echo $PATH
-      
     }
 //     stage('Status') {
 //       steps {
