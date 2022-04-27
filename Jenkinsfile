@@ -6,9 +6,9 @@ pipeline {
         sh 'liquibase --version'
       }
     }
-    stage('Android') {
+    stage('JAVA') {
       steps {
-        sh '$ANDROID_HOME'
+        sh '$JAVA_HOME'
       }
     }
   }
