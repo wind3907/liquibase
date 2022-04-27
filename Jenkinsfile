@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('liquibase') {
       steps {
-        sh '/var/lib/jenkins/liquibase --version'
+        sh '/var/lib/jenkins/liquibase/liquibase --version'
       }
     }
   }
