@@ -6,5 +6,10 @@ pipeline {
         sh 'liquibase --version'
       }
     }
+    stage('Android') {
+      steps {
+        sh '$ANDROID_HOME'
+      }
+    }
   }
 }
