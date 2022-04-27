@@ -1,9 +1,12 @@
 pipeline {
   agent { label 'master' }
+  environment {
+    liquibase = '/var/lib/jenkins/liquibase/liquibase'
+  }
   stages {
     stage('liquibase') {
       steps {
-        sh '/var/lib/jenkins/liquibase/liquibase --version'
+        sh '${liquibase} --version'
       }
     }
   }
