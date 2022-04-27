@@ -118,7 +118,7 @@ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
             path="../DMLScripts/R52_0_DML_OPCO4062_add_loc_message.sql"
             relativeToChangelogFile="true"/>
     </changeSet>
-    <changeSet author="initial" id="251" version="R52.1-">
+    <changeSet author="initial" id="251">
         <sqlFile dbms="postgresql"
             encoding="UTF-8"
             path="../DMLScripts/R52_0_DML_OPCO4062_add_loc_stat.sql"
