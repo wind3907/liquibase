@@ -2,6 +2,9 @@ pipeline {
   agent {
     docker { image 'liquibase/liquibase:latest' }
   }
+  environment {
+    JAVA_HOME='/usr/local/openjdk-11'
+  }
   stages {
     stage('Test') {
       steps {
