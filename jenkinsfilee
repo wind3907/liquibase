@@ -1,15 +1,12 @@
 pipeline {
-  agent { label 'master' }
+  agent {
+    docker { image 'liquibase/liquibase:latest' }
+  }
   stages {
-    stage('liquibase') {
+    stage('Test') {
       steps {
         sh 'liquibase --version'
       }
-    }
-  }
-  post {
-    always {
-      cleanWs()
     }
   }
 }
